@@ -12,3 +12,5 @@ Used to determine if an initial population with support 0<x<d can survive in the
 this determines the critical initial domain size (dstar) using a bisection method. Inputs are desired accuracy for dstar, and the number of sample points desired for the interval [0, .99cstar]. It outputs a csv file containing the c sample points as one row, and the corresponding dstar as the other row.
 ## plot_patch
 This is used to compute population density curves for a growth function meeting hypothesis 2.3. The inputs are the initial support ([-l,l]), the speed of habitat shift (c), the number of generations and the desired name of the csv output file. The output is a csvfile whose rows are the respective x  and u values for each generation.
+## findeq
+This iterates the case corresponding to hypo 2.3 until a fixed point condition is met. The initial condition used is u(x)=1 on [-l,l]. the inputs are l (half patch size), c, and tolerance. The output is the x and u vector of the equilibrium. The fixed point condition used is that absilute max. difference of the appropriatley shifted images of the growth functions of consecutive genrations are less than than tolerance.
